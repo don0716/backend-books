@@ -20,6 +20,8 @@
 //Test with Postman.
 
 const express = require("express");
+const cors = require("cors");
+app.use(cors());
 const app = express();
 app.use(express.json());
 
@@ -189,6 +191,7 @@ const updateBookData = async (bookId, bookRatingToUpdate) => {
       bookRatingToUpdate,
       { new: true }
     );
+    return updatedBook;
   } catch (error) {
     console.log("Error in updating Book.", error);
   }
