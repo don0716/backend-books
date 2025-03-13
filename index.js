@@ -20,9 +20,11 @@
 //Test with Postman.
 
 const express = require("express");
+const app = express();
+
 const cors = require("cors");
 app.use(cors());
-const app = express();
+
 app.use(express.json());
 
 const { initializeDatabase } = require("./db/db.connect");
